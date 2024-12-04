@@ -1,151 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RateConnector</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-      font-size: 1.8rem;
-      margin: 0;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li {
-      margin: 0;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #ffe600;
-    }
-    .hero {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: #e3f2fd;
-      color: #333;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin: 0 auto;
-      max-width: 700px;
-      line-height: 1.6;
-    }
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .about, .contact {
-      margin-bottom: 2rem;
-    }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .about p, .contact p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    .contact form {
-      display: grid;
-      gap: 1rem;
-    }
-    .contact form input, .contact form textarea, .contact form button {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    .contact form button {
-      background: linear-gradient(to right, #4caf50, #8bc34a);
-      color: white;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .contact form button:hover {
-      background: linear-gradient(to right, #45a049, #76c66b);
-    }
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-    footer a {
-      color: #ffe600;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RateConnector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #e0e7ff, #f8fafc);
+            color: #333;
+        }
+        
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header h2 {
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .left-bar, .right-bar {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .middle-body {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .button-group a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button-group a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-group a i {
+            margin-right: 8px;
+        }
+
+        /* Button Colors */
+        .btn-blue { background: #3b82f6; }
+        .btn-green { background: #10b981; }
+        .btn-red { background: #ef4444; }
+        .btn-yellow { background: #f59e0b; }
+
+        /* Footer Section */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Mobile Friendly Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .left-bar, .right-bar, .middle-body {
+                flex: 1;
+                min-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>RateConnector</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="index.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>RateConnector</h1>
+        <h2>By Progressive United Engineers Association</h2>
+    </header>
 
-  <section class="hero">
-    <h2>Welcome to RateConnector</h2>
-    <p>Your one-stop solution for seamless engineering rate references and community support.</p>
-  </section>
+    <div class="container">
+        <!-- Left Bar -->
+        <div class="left-bar">
+            <div class="button-group">
+                <a href="cable-wire-pricelist.pdf" class="btn-blue">
+                    <i class="fas fa-bolt"></i> Cable/Wire Pricelist
+                </a>
+                <a href="fan-pricelist.pdf" class="btn-green">
+                    <i class="fas fa-fan"></i> Fan Pricelist
+                </a>
+                <a href="ac-pricelist.pdf" class="btn-yellow">
+                    <i class="fas fa-wind"></i> AC Pricelist
+                </a>
+                <a href="switchgear-pricelist.pdf" class="btn-red">
+                    <i class="fas fa-lightbulb"></i> Switchgear Pricelist
+                </a>
+            </div>
+        </div>
 
-  <section id="about" class="section about">
-    <h2>About</h2>
-    <p>
-      Progressive United Engineers’ Association (PUEA) began its journey on 30th August 2015 at Subarna Banik Samaj Hall, Kolkata. The association brings together engineers from various departments to uplift the engineering cadre and enhance their service conditions. With a commitment to social and economic development, PUEA fosters a spirit of unity and professionalism among its members.
-    </p>
-  </section>
+        <!-- Middle Body -->
+        <div class="middle-body">
+            <div class="button-group">
+                <a href="#" class="btn-blue">
+                    <i class="fas fa-upload"></i> Upload Pricelist
+                </a>
+            </div>
+        </div>
 
-  <section id="contact" class="section contact">
-    <h2>Contact Us</h2>
-    <form action="#" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+        <!-- Right Bar -->
+        <div class="right-bar">
+            <div class="button-group">
+                <a href="labour-rate-app.pdf" class="btn-green">
+                    <i class="fas fa-user-cog"></i> Labour Rate
+                </a>
+                <a href="work-cost-app.pdf" class="btn-red">
+                    <i class="fas fa-tools"></i> Work Cost Estimator
+                </a>
+                <a href="load-calculator-app.pdf" class="btn-yellow">
+                    <i class="fas fa-calculator"></i> Load Calculator
+                </a>
+            </div>
+        </div>
+    </div>
 
-  <footer>
-    <p>&copy; 2024 RateConnector by <a href="#">PUEA</a>. All rights reserved.</p>
-  </footer>
+    <footer>
+        <p>&copy; 2024 RateConnector. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
